@@ -50,7 +50,7 @@ public class NetworkGet extends AsyncTask<String,Void,String> {
             conn.setRequestProperty("Content-type","application/x-www-form-urlencoded; charset=utf-8");
             //전송값 설정
             StringBuffer buffer = new StringBuffer();
-            buffer.append("id").append("=").append(strings[0]);
+            buffer.append("user_id").append("=").append(strings[0]);
 
             //서버로 전송
             OutputStreamWriter outStream = new OutputStreamWriter(conn.getOutputStream(),"utf-8");

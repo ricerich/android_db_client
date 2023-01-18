@@ -27,14 +27,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         listView = findViewById(R.id.listView);
-        adapter = new Custom_Adapter(MainActivity.this,R.layout.adapter_userinfo,new ArrayList<UserInfo>());
+        adapter = new Custom_Adapter( MainActivity.this,
+                                        R.layout.adapter_userinfo,
+                                        new ArrayList<UserInfo>());
         listView.setAdapter(adapter);
 
         refreshBtn = findViewById(R.id.btnRefresh);
         refreshBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new NetworkGet((Custom_Adapter)listView.getAdapter()).execute("");
+                //new NetworkGet((Custom_Adapter)listView.getAdapter()).execute("");
+                Custom_Adapter adapter1 = (Custom_Adapter)listView.getAdapter();
+                NetworkGet net1 = new NetworkGet(adapter1);
+                net1.execute("");
+
+
             }
         });
         addBtn = findViewById(R.id.btn_add);

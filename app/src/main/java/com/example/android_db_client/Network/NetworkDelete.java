@@ -18,7 +18,7 @@ import java.net.URL;
 public class NetworkDelete extends AsyncTask<String,Void,String> {
 
     private URL Url;
-    private String URL_Adress = "http://10.100.102.17/TestDB/deleteDB.jsp";
+    private String URL_Adress = "http://10.100.102.17/testDB/deleteDB.jsp";
     private Custom_Adapter adapter;
 
     public NetworkDelete(Custom_Adapter adapter){
@@ -48,7 +48,7 @@ public class NetworkDelete extends AsyncTask<String,Void,String> {
 
             //전송값 설정
             StringBuffer buffer = new StringBuffer();
-            buffer.append("id").append("=").append(strings[0]);
+            buffer.append("user_id").append("=").append(strings[0]);
 
             //서버로 전송
             OutputStreamWriter outStream = new OutputStreamWriter(conn.getOutputStream(),"utf-8");
