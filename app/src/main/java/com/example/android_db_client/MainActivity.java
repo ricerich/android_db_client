@@ -75,5 +75,15 @@ public class MainActivity extends AppCompatActivity {
         });
         new NetworkGet((Custom_Adapter)listView.getAdapter()).execute("");
 
+        EditText edtSearch = findViewById(R.id.edtSearch);
+        Button btnSearch = findViewById(R.id.btnSearch);
+        btnSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String search_id = edtSearch.getText().toString();
+                new NetworkGet((Custom_Adapter)listView.getAdapter()).execute(search_id);
+            }
+        });
+
     }
 }
