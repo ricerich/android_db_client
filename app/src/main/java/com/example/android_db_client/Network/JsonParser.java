@@ -55,6 +55,7 @@ public class JsonParser {
     static public int getResultJson(String response) throws JSONException{
         JSONArray jsonArray = new JSONArray(response);
         JSONObject jsonObject = new JSONObject(jsonArray.getString(0));
-        return Integer.parseInt(jsonObject.getString("RESULT_OK"));
+        int result1 =Integer.parseInt(jsonObject.getString("RESULT_OK"));
+        return result1;
     }
 }
