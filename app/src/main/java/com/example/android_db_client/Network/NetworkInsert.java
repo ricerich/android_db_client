@@ -86,7 +86,7 @@ public class NetworkInsert extends AsyncTask<String,Void,String> {
             e.printStackTrace();
         }
         if(res==0){
-
+            new NetworkGet(adapter).execute("");
         }
         else{
             new NetworkGet(adapter).execute("");
